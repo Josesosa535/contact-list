@@ -58,6 +58,16 @@ const eliminarContacto = (nombre) => {
 
 eliminarContacto("Said Sosa");
 
+function actualizarContacto(nombre, apellido, telefono, ciudad, direccion) {
+  let contacto = listaContactos.find((contacto) => contacto.nombre === nombre);
+  contacto.apellido = apellido;
+  contacto.telefono = telefono;
+  contacto.ubicaciones.ciudad = ciudad;
+  contacto.ubicaciones.direccion = direccion;
+}
+actualizarContacto("Jose", "Petro", 1111111111, "medellin", "poblado");
+actualizarContacto("Said", "Morales", 222222222, "Cali", "calle 80");
+
 function mostrarContactos() {
   for (let i = 0; i < listaContactos.length; i++) {
     let contacto = listaContactos[i];
